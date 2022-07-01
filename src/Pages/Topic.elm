@@ -1,5 +1,6 @@
 module Pages.Topic exposing (Topic(..), view)
 
+import Elements.ChunkyText
 import Html exposing (Html)
 import ReCase exposing (ReCase(..), recase)
 
@@ -10,4 +11,6 @@ type Topic
 
 view : Topic -> Html msg
 view (Topic topic) =
-    Html.h1 [] [ "Topic: " ++ recase ToTitle topic ++ "." |> Html.text ]
+    recase ToTitle topic
+        |> (++) "Topic: "
+        |> Elements.ChunkyText.view

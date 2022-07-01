@@ -1,4 +1,4 @@
-module Elements.Navigation exposing (..)
+module Elements.Navigation exposing (view)
 
 import Html exposing (Html)
 import Html.Attributes as Attributes
@@ -23,4 +23,6 @@ view =
 
 navigationLink : String -> UrlPath -> Html msg
 navigationLink content (UrlPath path) =
-    Html.li [] [ Html.a [ Attributes.href path ] [ Html.text content ] ]
+    Html.li []
+        [ Html.a [ Attributes.href path ] [ Html.text content ]
+        ]

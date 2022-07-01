@@ -1,5 +1,6 @@
-module Pages.User exposing (..)
+module Pages.User exposing (User(..), Username(..), view, toUser)
 
+import Elements.ChunkyText
 import Html exposing (Html)
 import ReCase exposing (ReCase(..), recase)
 
@@ -19,4 +20,6 @@ toUser username =
 
 view : User -> Html msg
 view (User (Username username)) =
-    Html.h1 [] [ "User: " ++ recase ToTitle username ++ "." |> Html.text ]
+    recase ToTitle username
+        |> (++) "User: "
+        |> Elements.ChunkyText.view

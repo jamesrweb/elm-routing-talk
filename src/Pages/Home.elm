@@ -1,8 +1,9 @@
 module Pages.Home exposing (view)
 
+import Elements.ChunkyText
 import Html exposing (Html)
 
 
 view : Html msg
 view =
-    Html.h1 [] [ Html.text "Home" ]
+    Elements.ChunkyText.view "Home"

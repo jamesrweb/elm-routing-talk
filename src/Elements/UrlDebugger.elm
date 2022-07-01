@@ -1,4 +1,4 @@
-module Elements.UrlDebugger exposing (..)
+module Elements.UrlDebugger exposing (view)
 
 import Html exposing (Html)
 import Url exposing (Url)
@@ -6,4 +6,8 @@ import Url exposing (Url)
 
 view : Url -> Html msg
 view url =
-    Html.output [] [ Html.text ("The current url is: " ++ Url.toString url) ]
+    Html.output []
+        [ Url.toString url
+            |> (++) "The current url is: "
+            |> Html.text
+        ]
